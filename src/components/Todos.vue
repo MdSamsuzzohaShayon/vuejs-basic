@@ -25,7 +25,8 @@ export default{
 
 <style scoped>
 .Todos{
-    margin:2em;
+    margin-top: 12%;
+    margin-left: 40%;
 }
 .todo-item{
     width: 40%;

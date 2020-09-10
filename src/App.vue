@@ -6,6 +6,12 @@
     <!-- USING DIFFERENT TYPES OF DIRECTIVES https://vuejs.org/v2/api/#v-html -->
     <!-- Dynamically bind one or more attributes, or a component prop to an expression. https://vuejs.org/v2/api/#v-bind -->
     <Todos v-bind:todos="todos" />
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 
@@ -60,4 +66,5 @@ body{
   background-size:cover;
   background-position:center;
 }
+
 </style>
