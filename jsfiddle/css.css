@@ -1,0 +1,31 @@
+#root{
+  width: 80%;
+  margin-left: 10%;
+}
+.red{
+  border: 2px solid red;
+}
+
+.green{
+  border: 2px solid green;
+}
+input{
+  border: none;
+  background: gray;
+  margin-top: 5px;
+  padding: 10px;
+}
+button{
+  border: none;
+  background: green;
+  padding: 10px 20px;
+  color: white;
+  margin: 10px 0;
+}
+li{
+  width: 320px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-bottom: 2px solid blue;
+  background: pink;
+}
