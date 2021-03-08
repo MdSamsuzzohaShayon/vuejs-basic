@@ -26,7 +26,10 @@ export default {
   },
   methods: {
     deleteTask(id) {
-      console.log("Task ID from Parent: ", id);
+      if (confirm("Are you sure?")) {
+        console.log("Task ID from Parent: ", id);
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+      }
     },
   },
   // LIFE CYCLE HOOKS
