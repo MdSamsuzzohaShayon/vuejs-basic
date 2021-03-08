@@ -3,6 +3,7 @@
     <!-- WE CAN SET DEFAULT PROPS VALUE  -->
     <!-- <Header /> -->
     <Header title="Task Manager" />
+    <AddTask @add-task="addTask" />
     <Tasks
       @toggle-reminder="toggleReminder"
       @delete-task="deleteTask"
@@ -14,12 +15,14 @@
 <script>
 import Header from "./components/Header.vue";
 import Tasks from "./components/Tasks.vue";
+import AddTask from "./components/AddTask";
 
 export default {
   name: "App",
   components: {
     Header,
     Tasks,
+    AddTask,
   },
   // https://v3.vuejs.org/guide/state-management.html#official-flux-like-implementation
   // It is often overlooked that the source of truth in Vue applications is the reactive data object - a component instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple instances, you can use a reactive method to make an object reactive:
@@ -29,6 +32,9 @@ export default {
     };
   },
   methods: {
+    addTask(task) {
+      this.tasks = [...this.tasks, task];
+    },
     deleteTask(id) {
       if (confirm("Are you sure?")) {
         console.log("Task ID from delete task event in App: ", id);
