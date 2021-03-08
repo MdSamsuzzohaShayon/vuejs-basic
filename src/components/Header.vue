@@ -1,6 +1,8 @@
 <template>
   <header class="task">
     <h1>{{ title }}</h1>
+    <!-- https://v3.vuejs.org/api/directives.html#v-on -->
+    <button class="btn" @click="onClick()">Click</button>
     <div class="btn-list">
       <Button text="Add Task" color="green" />
       <Button text="Update Task" color="blue" />
@@ -24,6 +26,11 @@ export default {
   },
   components: {
     Button,
+  },
+  methods: {
+    onClick() {
+      console.log("shorthand on click");
+    },
   },
 };
 </script>
