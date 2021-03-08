@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random user generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- https://v3.vuejs.org/guide/installation.html#for-server-side-rendering -->
+    <div id="app">
+        <!-- THIS WILL WORK IF WE REMOVE TEMPLATE FROM APP.JS  -->
+        <img v-bind:class="gender" v-bind:src="picture" v-bind:alt="`${firstName} ${lastName}`">
+        <!-- https://vuejs.org/v2/guide/syntax.html#v-bind-Shorthand -->
+        <img :class="gender" :src="picture" :alt="`${firstName} ${lastName}`">
+        <h2 :class="gender">Welcome {{firstName}} {{lastName}}</h2>
+        <h3 :class="gender">Email: {{email}}</h3>
+        <h3 :class="gender">Gender: {{gender}}</h3>
+        <!-- https://v3.vuejs.org/api/directives.html#v-on -->
+        <button v-on:click="getUser">Get Random User</button>
+
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

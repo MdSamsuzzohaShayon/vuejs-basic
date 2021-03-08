@@ -1,0 +1,22 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img{
+    margin: 10px;
+    width: 300px;
+}
+button{
+    font-size: 1.2rem;
+    color: white;
+    background: rgb(24, 112, 36);
+    border: none;
+    padding: 10px 20px;
+    outline: none;
+    /* border-radius: 15%; */
+}
+.male{
+    color: rgb(71, 52, 49);
+}
+.female{
+    color: rgb(49, 71, 69);
+}
