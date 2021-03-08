@@ -3,7 +3,11 @@
     <!-- WE CAN SET DEFAULT PROPS VALUE  -->
     <!-- <Header /> -->
     <Header title="Task Manager" />
-    <Tasks @delete-task="deleteTask" :tasks="tasks" />
+    <Tasks
+      @toggle-reminder="toggleReminder"
+      @delete-task="deleteTask"
+      :tasks="tasks"
+    />
   </div>
 </template>
 
@@ -27,9 +31,15 @@ export default {
   methods: {
     deleteTask(id) {
       if (confirm("Are you sure?")) {
-        console.log("Task ID from Parent: ", id);
+        console.log("Task ID from delete task event in App: ", id);
         this.tasks = this.tasks.filter((task) => task.id !== id);
       }
+    },
+    toggleReminder(id) {
+      console.log("ID from toggle reminder event in App: ", id);
+      this.tasks = this.tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      );
     },
   },
   // LIFE CYCLE HOOKS
