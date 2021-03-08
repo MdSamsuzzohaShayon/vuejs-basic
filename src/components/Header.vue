@@ -2,11 +2,11 @@
   <header class="task">
     <h1>{{ title }}</h1>
     <!-- https://v3.vuejs.org/api/directives.html#v-on -->
-    <button class="btn" @click="onClick()">Click</button>
+    <!-- <button class="btn" @click="onClick()">Click</button> -->
     <div class="btn-list">
-      <Button text="Add Task" color="green" />
-      <Button text="Update Task" color="blue" />
-      <Button text="Delete Task" color="purple" />
+      <Button text="Add Task" color="rgb(19, 102, 88)" />
+      <Button text="Update Task" color="rgb(21, 14, 24)" />
+      <Button text="Delete Task" color="rgb(65, 29, 51)" />
     </div>
   </header>
 </template>
@@ -61,6 +61,7 @@ a {
   padding: 10px 20px;
   margin: 0 20px;
   background: rgb(21, 14, 24);
+  /* background: rgb(65, 29, 51); */
   border: none;
   outline: none;
 }
