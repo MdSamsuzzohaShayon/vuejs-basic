@@ -3,7 +3,7 @@
     <!-- WE CAN SET DEFAULT PROPS VALUE  -->
     <!-- <Header /> -->
     <Header title="Task Manager" />
-    <Tasks :tasks="tasks" />
+    <Tasks @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
     return {
       tasks: [],
     };
+  },
+  methods: {
+    deleteTask(id) {
+      console.log("Task ID from Parent: ", id);
+    },
   },
   // LIFE CYCLE HOOKS
   // https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks

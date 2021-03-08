@@ -1,6 +1,9 @@
 <template>
   <div :class="[task.reminder ? 'reminder' : '', 'task']">
-    <h3>{{ task.text }} <i class="fas fa-times icon"></i></h3>
+    <h3>
+      {{ task.text }}
+      <i class="fas fa-times icon" @click="onDelete(task.id)"></i>
+    </h3>
     <p>{{ task.day }}</p>
   </div>
 </template>
@@ -10,6 +13,14 @@ export default {
   name: "Task",
   props: {
     task: Object,
+  },
+  methods: {
+    onDelete(id) {
+      console.log("ID: ", id);
+      //   https://vuejs.org/v2/guide/components-custom-events.html
+      // Unlike components and props, event names don’t provide any automatic case transformation. Instead, the name of an emitted event must exactly match the name used to listen to that event
+      this.$emit("delete-task", id);
+    },
   },
 };
 </script>
