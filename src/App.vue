@@ -57,30 +57,42 @@ export default {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       );
     },
+    async fetchTasks() {
+      const res = await fetch("api/tasks");
+      const data = await res.json();
+      return data;
+    },
+    async fetchTask(id) {
+      const res = await fetch(`api/tasks/${id}`);
+      const data = await res.json();
+      return data;
+    },
   },
   // LIFE CYCLE HOOKS
   // https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
-  created() {
-    this.tasks = [
-      {
-        id: 1,
-        text: "Doctor Appointment",
-        day: "March 1st at 2:30",
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: "Meeting At School",
-        day: "March 4th at 2:30",
-        reminder: true,
-      },
-      {
-        id: 3,
-        text: "Doctor Appointment",
-        day: "March 8th at 2:30",
-        reminder: false,
-      },
-    ];
+  async created() {
+    // this.tasks = [
+    //   {
+    //     id: 1,
+    //     text: "Doctor Appointment",
+    //     day: "March 1st at 2:30",
+    //     reminder: true,
+    //   },
+    //   {
+    //     id: 2,
+    //     text: "Meeting At School",
+    //     day: "March 4th at 2:30",
+    //     reminder: true,
+    //   },
+    //   {
+    //     id: 3,
+    //     text: "Doctor Appointment",
+    //     day: "March 8th at 2:30",
+    //     reminder: false,
+    //   },
+    // ];
+
+    this.tasks = await this.fetchTasks();
   },
 };
 </script>
