@@ -15,6 +15,11 @@ npm install vue-router@next
 npm run serve
 ```
 
+### run backend for this project
+```
+npm run backend
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
