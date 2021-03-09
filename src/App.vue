@@ -2,8 +2,14 @@
   <div class="container">
     <!-- WE CAN SET DEFAULT PROPS VALUE  -->
     <!-- <Header /> -->
-    <Header title="Task Manager" />
-    <AddTask @add-task="addTask" />
+    <Header
+      @toggle-add-task="toggleAddTask"
+      :showAddTask="showAddTask"
+      title="Task Manager"
+    />
+    <div v-if="showAddTask">
+      <AddTask v-on:add-task="addTask" />
+    </div>
     <Tasks
       @toggle-reminder="toggleReminder"
       @delete-task="deleteTask"
@@ -29,9 +35,13 @@ export default {
   data() {
     return {
       tasks: [],
+      showAddTask: false,
     };
   },
   methods: {
+    toggleAddTask() {
+      this.showAddTask = !this.showAddTask;
+    },
     addTask(task) {
       this.tasks = [...this.tasks, task];
     },

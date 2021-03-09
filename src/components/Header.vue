@@ -4,7 +4,11 @@
     <!-- https://v3.vuejs.org/api/directives.html#v-on -->
     <!-- <button class="btn" @click="onClick()">Click</button> -->
     <div class="btn-list">
-      <Button text="Add Task" color="rgb(19, 102, 88)" />
+      <Button
+        @toggle-add-task="$emit('toggle-add-task')"
+        :text="showAddTask ? 'Close' : 'Add Task'"
+        color="rgb(19, 102, 88)"
+      />
       <Button text="Update Task" color="rgb(21, 14, 24)" />
       <Button text="Delete Task" color="rgb(65, 29, 51)" />
     </div>
@@ -23,6 +27,7 @@ export default {
       type: String,
       default: "Task Manager Default",
     },
+    showAddTask: Boolean,
   },
   components: {
     Button,

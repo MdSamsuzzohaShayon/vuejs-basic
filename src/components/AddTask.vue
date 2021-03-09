@@ -1,5 +1,5 @@
 <template>
-  <form @submit="onSubmit" class="add-form">
+  <form v-on:submit="onSubmit" class="add-form">
     <div class="form-control">
       <label>Task</label>
       <!-- https://v3.vuejs.org/api/directives.html#v-model -->
