@@ -5,7 +5,7 @@
     <!-- <button class="btn" @click="onClick()">Click</button> -->
     <div class="btn-list">
       <Button
-        @toggle-add-task="$emit('toggle-add-task')"
+        @btn-click="$emit('toggle-add-task')"
         :text="showAddTask ? 'Close' : 'Add Task'"
         color="rgb(19, 102, 88)"
       />

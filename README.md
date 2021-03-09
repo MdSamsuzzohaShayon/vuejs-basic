@@ -17,3 +17,6 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Deployment guide
+See [defferant ways](https://cli.vuejs.org/guide/deployment.html)
