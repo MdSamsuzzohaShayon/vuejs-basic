@@ -13,12 +13,6 @@
       "reminder": "true"
     },
     {
-      "id": "3",
-      "text": "Doctor Appointment",
-      "day": "March 8th at 2:30",
-      "reminder": "false"
-    },
-    {
       "id": 59339,
       "text": "Go to Dentist",
       "day": "Feb 12 2:38pm",
