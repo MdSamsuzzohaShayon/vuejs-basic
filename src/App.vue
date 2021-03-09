@@ -42,8 +42,22 @@ export default {
     toggleAddTask() {
       this.showAddTask = !this.showAddTask;
     },
-    addTask(task) {
-      this.tasks = [...this.tasks, task];
+    async addTask(task) {
+      // this.tasks = [...this.tasks, task];
+      // console.log("New Task: ", task);
+
+      // ADD TASK TO SERVER DATA
+      const res = await fetch("api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+
+      const data = await res.json();
+      console.log("Data: ", data);
+      this.tasks = [...this.tasks, data];
     },
     deleteTask(id) {
       if (confirm("Are you sure?")) {
@@ -92,6 +106,7 @@ export default {
     //   },
     // ];
 
+    // GETING DATA FROM SERVER
     this.tasks = await this.fetchTasks();
   },
 };
