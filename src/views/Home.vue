@@ -2,6 +2,7 @@
   <div v-if="showAddTask">
     <AddTask v-on:add-task="addTask" />
   </div>
+  <!-- <AddTask v-show="showAddTask" v-on:add-task="addTask" /> -->
   <Tasks
     @toggle-reminder="toggleReminder"
     @delete-task="deleteTask"

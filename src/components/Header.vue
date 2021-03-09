@@ -5,12 +5,13 @@
     <!-- <button class="btn" @click="onClick()">Click</button> -->
     <div class="btn-list">
       <Button
+        v-show="homePage"
         @btn-click="$emit('toggle-add-task')"
         :text="showAddTask ? 'Close' : 'Add Task'"
         color="rgb(19, 102, 88)"
       />
-      <Button text="Update Task" color="rgb(21, 14, 24)" />
-      <Button text="Delete Task" color="rgb(65, 29, 51)" />
+      <Button v-show="homePage" text="Update Task" color="rgb(21, 14, 24)" />
+      <Button v-show="homePage" text="Delete Task" color="rgb(65, 29, 51)" />
     </div>
   </header>
 </template>
@@ -31,6 +32,15 @@ export default {
   },
   components: {
     Button,
+  },
+  computed: {
+    homePage() {
+      if (this.$route.path === "/") {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   methods: {
     onClick() {
